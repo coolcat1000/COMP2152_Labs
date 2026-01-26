@@ -14,3 +14,14 @@ d =4
 
 # 
 e = ( a- ((b**c) // d)) + (a % c)
+
+# question 4 formating 
+temprature = 32.6
+print("the temp of today:{:.3f} degrees celsius".format(temprature))
+
+#question 5 user input 
+userAge = int(input(" enter your age: "))
+userAge = userAge +22
+print (" Now showing the items filters by age: ",userAge)
+
+
