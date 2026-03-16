@@ -1,5 +1,5 @@
 # Lab 04: Loops and Functions Practice
-# Student Name: Maziar Sojoudian
+# Student Name: Jessica Wisnoski
 # Date: Feb 06, 2026
 
 # ==================================================
@@ -55,6 +55,8 @@ def two_sum_brute_force(numbers, target):
 # Part B: Optimized with Dictionary
 def two_sum_optimized(numbers, target):
     seen = {}  # Dictionary to store {number: index}
+
+
     # Loop through numbers, check if needed value exists in seen
     for i in range(len(numbers)):
         needed = target - numbers[i]
@@ -68,6 +70,40 @@ def two_sum_optimized(numbers, target):
 # Question 3: Shuffle the Array
 # ==================================================
 
+def shuffle(nums):
+    # Step 1: Split the array into two halves
+    n = len(nums) // 2
+    first_half = nums[:n]
+    second_half = nums[n:]
+
+    # Step 2: Create empty result list
+    result = []
+
+    # Step 3: Interleave using a for loop
+    for i in range(n):
+        result.append(first_half[i])
+        result.append(second_half[i])
+
+    return result
+
+
 # ==================================================
 # Question 4: First Unique Character
 # ==================================================
+def count_characters(s):
+    counts = {}
+    for char in s:
+        if char in counts:  # e = 1 ====> e=2 ====> e=3 # leetcode
+            counts[char] += 1
+        else:
+            counts[char] = 1
+    return counts
+
+
+def first_unique_character(s):
+    char_counts = count_characters(s)
+    for i in range(len(s)):
+        if char_counts[s[i]] == 1:
+            return i
+    return -1
+
